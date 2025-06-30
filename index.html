@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Máquinas</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-laptop"></i>
+            </div>
+            <h1>Solicitação de Máquinas</h1>
+            <p>Sistema de Requisição de Equipamentos</p>
+        </header>
+        
+        <main class="main-content">
+            <form id="requestForm" class="request-form">
+                <h2>Nova Solicitação</h2>
+                
+                <div class="form-group">
+                    <label for="supervisor">Nome do Supervisor*</label>
+                    <input type="text" id="supervisor" name="supervisor" placeholder="Nome completo do supervisor" required>
+                    <div class="error-message" id="supervisor-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email do Solicitador*</label>
+                    <input type="email" id="email" name="email" placeholder="email@empresa.com" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cidade">Cidade/Região*</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Ex: Fortaleza - Centro (Detalhes da região e entrega na OBS)" required>
+                    <div class="error-message" id="cidade-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantidade">Quantidade de Máquinas*</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" value="1" required>
+                    <div class="error-message" id="quantidade-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes" name="observacoes" placeholder="Informações adicionais sobre a solicitação (Detalhes da região e entrega)"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                </button>
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Solicitação registrada com sucesso!</h3>
+                <p id="success-details"></p>
+                <button id="newRequestBtn" class="new-transfer-btn">Nova Solicitação</button>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Sistema desenvolvido por Rafael Germano <br>Controle Interno</p>
+        </footer>
+    </div>
+    
+    <script src="assets/script.js"></script>
+</body>
+</html>
